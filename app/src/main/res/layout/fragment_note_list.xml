@@ -15,7 +15,7 @@
         tools:itemCount="10"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_redirect"
         android:layout_width="203dp"
         android:layout_height="54dp"
         android:text="@string/add_note"
