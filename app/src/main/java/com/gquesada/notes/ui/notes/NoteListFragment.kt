@@ -1,15 +1,12 @@
 package com.gquesada.notes.ui.notes
 
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -74,11 +71,12 @@ class NoteListFragment : Fragment(), View.OnClickListener {
 
     private fun onListItemClicked(noteModel: NoteModel) {
         Toast.makeText(context, "El item: ${noteModel.title}, fue eliminado", Toast.LENGTH_LONG).show()
-        viewModel.onListItemClicked(noteModel)
+        viewModel.deleteNote(noteModel)
         viewModel.onViewReady()
     }
 
     override fun onClick(v: View?) {
+
         parentFragmentManager.beginTransaction().replace(R.id.fragment_container, NoteAddFragment()).commit()
     }
 }
