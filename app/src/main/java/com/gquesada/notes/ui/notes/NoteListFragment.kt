@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,8 +37,6 @@ class NoteListFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_note_list, container, false)
         initViews(view)
-
-
         viewModel = ViewModelProvider(this)[NoteListViewModel::class.java]
         observe()
         return view
@@ -43,7 +44,6 @@ class NoteListFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
        view.findViewById<Button>(R.id.button_redirect)?.setOnClickListener(this)
         viewModel.onViewReady()
     }
@@ -76,7 +76,6 @@ class NoteListFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-
-        parentFragmentManager.beginTransaction().replace(R.id.fragment_container, NoteAddFragment()).commit()
+          parentFragmentManager.beginTransaction().replace(R.id.fragment_container, NoteAddFragment()).commit()
     }
 }

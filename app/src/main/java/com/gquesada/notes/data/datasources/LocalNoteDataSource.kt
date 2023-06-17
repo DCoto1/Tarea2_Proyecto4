@@ -4,7 +4,7 @@ import com.gquesada.notes.data.models.LocalNote
 import com.gquesada.notes.data.models.LocalTag
 import com.gquesada.notes.domain.models.NoteModel
 
-class LocalNoteDataSource {
+object LocalNoteDataSource {
 
     private val notes = mutableListOf(
         LocalNote(

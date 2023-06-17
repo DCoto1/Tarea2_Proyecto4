@@ -1,5 +1,6 @@
 package com.gquesada.notes.ui.notes
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -37,9 +38,9 @@ class NoteAddFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         val title = view?.findViewById<EditText>(R.id.title)?.text.toString()
         val description = view?.findViewById<EditText>(R.id.description)?.text.toString()
-        val tag = TagModel((Math.random()*10).roundToInt(), view?.findViewById<EditText>(R.id.tag)?.text.toString())
+        val tag = TagModel((Math.random() * 100).roundToInt(), view?.findViewById<EditText>(R.id.tag)?.text.toString())
         val date = view?.findViewById<EditText>(R.id.date)?.text.toString()
-        viewModel.addNote(noteModel = NoteModel(id = (Math.random()*10).roundToInt(), title = title, description = description, tag = tag, date = Integer.parseInt(date)))
+        viewModel.addNote(noteModel = NoteModel(id = (Math.random() * 100).roundToInt(), title = title, description = description, tag = tag, date = Integer.parseInt(date)))
         Toast.makeText(context, "El item: ${title}, fue agregado!", Toast.LENGTH_LONG).show()
         parentFragmentManager.beginTransaction().replace(R.id.fragment_container, NoteListFragment()).commit()
     }

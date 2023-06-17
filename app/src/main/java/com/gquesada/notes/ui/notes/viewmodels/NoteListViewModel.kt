@@ -12,7 +12,7 @@ import com.gquesada.notes.domain.usecases.DeleteNotesUseCase
 import com.gquesada.notes.domain.usecases.GetNotesUseCase
 
 class NoteListViewModel : ViewModel() {
-    private val dataSource = LocalNoteDataSource()
+    private val dataSource = LocalNoteDataSource
     private val repository: NoteRepository = NoteRepositoryImpl(dataSource)
     private val getNotesUseCase = GetNotesUseCase(repository)
     private val delNotesUseCase = DeleteNotesUseCase(repository)
