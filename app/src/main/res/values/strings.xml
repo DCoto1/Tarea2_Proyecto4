@@ -7,8 +7,7 @@
     <string name="date">Date</string>
     <string name="add">Add</string>
     <string name="add_note">Add Note</string>
-    <string name="desea_borrar_el_item_de_la_lista">Desea borrar el item de la lista?</string>
-    <string name="s">Sí</string>
+    <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="tag">Tag</string>
 </resources>
